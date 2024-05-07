@@ -1,4 +1,4 @@
-function generateRandomText() {
+function generateAllCombinations() {
     let pronoun = ['the', 'our'];
     let adj = ['great', 'big'];
     let noun = ['jogger', 'racoon'];
@@ -13,16 +13,14 @@ function generateRandomText() {
         }
     }
 
-    return domains[Math.floor(Math.random() * domains.length)];
+    return domains;
 }
 
-
-function generateRandomTextForList() {
-    const list = document.querySelectorAll('ul li');
-    list.forEach((element) => {
-        element.textContent = generateRandomText();
+function logAllCombinations() {
+    const combinations = generateAllCombinations();
+    combinations.forEach((combination) => {
+        console.log(combination);
     });
-    }
+}
 
-const button = document.querySelector('button');
-button.addEventListener('click', generateRandomTextForList);
+logAllCombinations();
